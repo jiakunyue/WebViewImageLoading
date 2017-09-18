@@ -1,0 +1,134 @@
+{
+  "data" : {
+    "allphoto" : [
+      {
+        "caption" : "美国微型马 世界上最小的马",
+        "pixel" : {
+          "height" : 406,
+          "width" : 550
+        },
+        "ref" : "<!--IMG#0-->",
+        "url" : "http://photo.6ag.cn/2016-07-31/260dcf146930fd16a1ab6dc268b59067.jpg"
+      },
+      {
+        "caption" : "美国微型马 世界上最小的马",
+        "pixel" : {
+          "height" : 385,
+          "width" : 548
+        },
+        "ref" : "<!--IMG#1-->",
+        "url" : "http://photo.6ag.cn/2016-07-31/9a321051523991486c641cebb6b26e06.jpg"
+      },
+      {
+        "caption" : "美国微型马 世界上最小的马",
+        "pixel" : {
+          "height" : 501,
+          "width" : 550
+        },
+        "ref" : "<!--IMG#2-->",
+        "url" : "http://photo.6ag.cn/2016-07-31/af1aea083e0e3b5b779ea89851582f35.jpg"
+      },
+      {
+        "caption" : "美国微型马 世界上最小的马",
+        "pixel" : {
+          "height" : 434,
+          "width" : 551
+        },
+        "ref" : "<!--IMG#3-->",
+        "url" : "http://photo.6ag.cn/2016-07-31/b185e3142413d67c43fb46d362331777.jpg"
+      }
+    ],
+    "befrom" : "易看网",
+    "classid" : "1",
+    "classname" : "奇闻异事",
+    "down" : "0",
+    "flashurl" : "",
+    "havefava" : "0",
+    "id" : "2887",
+    "keyboard" : "美国,世界",
+    "keyid" : "2886,2884,2878,2877,2873,2859,2858,2845,2827,2820",
+    "morepic" : [
+      {
+        "bigpic" : "http://photo.6ag.cn/2016-07-31/small9a321051523991486c641cebb6b26e061474420659.jpg",
+        "caption" : "",
+        "smallpic" : "http://photo.6ag.cn/2016-07-31/small9a321051523991486c641cebb6b26e061474420659.jpg",
+        "title" : "美国微型马 世界上最小的马 0/1"
+      },
+      {
+        "bigpic" : "http://photo.6ag.cn/2016-07-31/b185e3142413d67c43fb46d362331777.jpg",
+        "caption" : "",
+        "smallpic" : "http://photo.6ag.cn/2016-07-31/b185e3142413d67c43fb46d362331777.jpg",
+        "title" : "美国微型马 世界上最小的马 1/1"
+      },
+      {
+        "bigpic" : "http://photo.6ag.cn/2016-07-31/260dcf146930fd16a1ab6dc268b59067.jpg",
+        "caption" : "",
+        "smallpic" : "http://photo.6ag.cn/2016-07-31/260dcf146930fd16a1ab6dc268b59067.jpg",
+        "title" : "美国微型马 世界上最小的马 2/1"
+      }
+    ],
+    "newstext" : "<p><!--IMG#0--></p>\r\n<p>Koda 是一匹身高只有五十九厘米的美国微型马，第一眼看到它的人总会误认为Koda 只是一个毛绒玩具，即使它走动起来，也只会认为是一个电动玩具。</p>\r\n<p></p>\r\n<p><!--IMG#1--></p>\r\n<p>Koda 之所以身材如此迷你，有先天因素，也和它出生时的健康状况有关。</p>\r\n<p></p>\r\n<p><!--IMG#2--></p>\r\n<p>和它的那些大型同类相比，也许Koda 和那只小猫走在一起才更匹配。</p>\r\n<p></p>\r\n<p><!--IMG#3--></p>\r\n<p>不过幸运的是Koda 成为了一个独一无二的宠物，毕竟这种微型马少之又少，样子也很乖巧，很讨人喜欢。</p>",
+    "newstime" : "1474420608",
+    "onclick" : "287",
+    "otherLink" : [
+      {
+        "classid" : "1",
+        "classname" : "奇闻异事",
+        "id" : "2886",
+        "isurl" : "0",
+        "onclick" : "235",
+        "title" : "快来看世界上最高的新娘 新郎亚历山大呀",
+        "titlepic" : "http://photo.6ag.cn/2016-07-31/small6fe57d7482f9cc1c826818e2be8cb5601474420473.jpg",
+        "titleurl" : "/qiwenyishi/2886.html"
+      },
+      {
+        "classid" : "1",
+        "classname" : "奇闻异事",
+        "id" : "2884",
+        "isurl" : "0",
+        "onclick" : "229",
+        "title" : "世界上最长的多骨鱼——“大鲱鱼王”",
+        "titlepic" : "http://photo.6ag.cn/2016-07-30/04afb214ac0fe437835ca68799362920.jpg",
+        "titleurl" : "/qiwenyishi/2884.html"
+      },
+      {
+        "classid" : "1",
+        "classname" : "奇闻异事",
+        "id" : "2878",
+        "isurl" : "0",
+        "onclick" : "367",
+        "title" : "不可思议的世界十大透明动物",
+        "titlepic" : "http://photo.6ag.cn/2016-07-30/ed748e201516747b908a4c349defb369.jpg",
+        "titleurl" : "/qiwenyishi/2878.html"
+      },
+      {
+        "classid" : "1",
+        "classname" : "奇闻异事",
+        "id" : "2877",
+        "isurl" : "0",
+        "onclick" : "224",
+        "title" : "世界上灭绝的奇怪海洋生物",
+        "titlepic" : "http://photo.6ag.cn/2016-07-30/a4faf46b1e046a251b39a13aadd4f759.jpg",
+        "titleurl" : "/qiwenyishi/2877.html"
+      },
+      {
+        "classid" : "1",
+        "classname" : "奇闻异事",
+        "id" : "2873",
+        "isurl" : "0",
+        "onclick" : "381",
+        "title" : "盘点世界上最丑的动物星鼻鼹鼠",
+        "titlepic" : "http://photo.6ag.cn/2016-07-30/c6687c6a83bda26e559548475ba4a793.jpg",
+        "titleurl" : "/qiwenyishi/2873.html"
+      }
+    ],
+    "plnum" : "13",
+    "smalltext" : "Koda 是一匹身高只有五十九厘米的美国微型马，第一眼看到它的人总会误认为Koda 只是一个毛绒玩具，即使它走动起来，也只会认为是一个电动玩具。Koda 之所以身材如此迷你，有先天因素，也和它出生时的健康状况有关。",
+    "title" : "美国微型马 世界上最小的马",
+    "titlepic" : "http://photo.6ag.cn/2016-07-31/small9a321051523991486c641cebb6b26e061474420659.jpg",
+    "titleurl" : "http://www.6ag.cn//qiwenyishi/2887.html",
+    "top" : "0"
+  },
+  "err_msg" : "success",
+  "info" : "读取信息内容成功！"
+}

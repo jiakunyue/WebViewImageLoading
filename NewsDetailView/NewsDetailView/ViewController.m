@@ -48,16 +48,25 @@
     
     self.webview.delegate = self;
     
-    [self loadData];
-    
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webview webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"objc received message from JS %@", data);
         responseCallback(@"Response for message from Objc");
     }];
+    
+    [self loadData];
+    
 }
 
 #pragma mark - 数据处理
 - (void)loadData {
+    
+    /*   加载本地 json 数据  如果接口出现问题请使用
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Data.json" ofType:nil];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    self.model = [NewModel mj_objectWithKeyValues:dict[@"data"]];
+    [self composeContentWithModel:self.model];
+     */
     
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     
@@ -69,7 +78,6 @@
     
     [self.manager GET:@"http://www.6ag.cn/e/api/getNewsContent.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         weakSelf.model = [NewModel mj_objectWithKeyValues:responseObject[@"data"]];
-//        [self.webview loadHTMLString:weakSelf.model.newstext baseURL:nil];
         [self composeContentWithModel:weakSelf.model];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error.description);
@@ -174,9 +182,8 @@
     });
 }
 
-// MD5加密
-- (NSString*)getmd5WithString:(NSString *)string
-{
+// MD5加密（图片缓存命名方式使用了MD5加密，这里为了找到对应图片名字）
+- (NSString*)getmd5WithString:(NSString *)string {
     const char* original_str=[string UTF8String];
     unsigned char digist[CC_MD5_DIGEST_LENGTH]; //CC_MD5_DIGEST_LENGTH = 16
     CC_MD5(original_str, (uint)strlen(original_str), digist);
@@ -188,6 +195,7 @@
 }
 
 #pragma mark - UIWebViewDelegate
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self getImageFromDownloaderOrDiskByImageUrlArray:self.model.allphoto];
 }
