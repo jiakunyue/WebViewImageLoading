@@ -19,8 +19,9 @@
 
 #define margin 20
 
-@interface ViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+@interface ViewController () <UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableview;
+@property (nonatomic, strong) UIWebView *webview;
 /** 管理者 */
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 /** 模型 */
@@ -41,12 +42,31 @@
     return _manager;
 }
 
+- (UIWebView *)webview {
+    if (!_webview) {
+        _webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _webview.delegate = self;
+        _webview.scrollView.scrollEnabled = NO;
+    }
+    return _webview;
+}
+
+- (UITableView *)tableview {
+    if (!_tableview) {
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+        _tableview.delegate = self;
+        _tableview.dataSource = self;
+        _tableview.tableHeaderView = self.webview;
+    }
+    return _tableview;
+}
+
 #pragma mark - 初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webview.delegate = self;
+    [self configUI];
     
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webview webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"objc received message from JS %@", data);
@@ -55,6 +75,19 @@
     
     [self loadData];
     
+}
+
+#pragma mark - 页面布局
+- (void)configUI {
+    
+//    [self.view addSubview:self.webview];
+    [self.view addSubview:self.tableview];
+}
+
+- (void)autolayoutWebview {
+    NSString *result = [self.webview stringByEvaluatingJavaScriptFromString:@"getHtmlHeight();"];
+    self.webview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, result.floatValue + 20);
+    self.tableview.tableHeaderView = self.webview;
 }
 
 #pragma mark - 数据处理
@@ -194,9 +227,24 @@
     return [outPutStr lowercaseString];
 }
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mycell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%zd", indexPath.row];
+    return cell;
+}
+
 #pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self autolayoutWebview];
     [self getImageFromDownloaderOrDiskByImageUrlArray:self.model.allphoto];
 }
 @end
